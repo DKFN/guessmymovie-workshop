@@ -7,6 +7,7 @@
 GET     /                           controllers.HomeController.index
 GET     /question                   controllers.HomeController.getQuestion(sessionId: String)
 GET     /check                      controllers.HomeController.checkAnswer(answer: Int, sessionId: String)
+GET     /init                       controllers.HomeController.initSession(login: String, level: String)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

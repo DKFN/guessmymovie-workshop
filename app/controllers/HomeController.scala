@@ -27,9 +27,9 @@ class HomeController @Inject()(cc: ControllerComponents, gs: GuessService) exten
     Ok(views.html.index())
   }
 
-  def initSession() = Action {
+  def initSession(login: String, level: String) = Action {
     // TODO : Inits a session and returns a seed, parameters are mode (easy: synopsis + actors pics, medium: synopsis + timeout, hard: actors only + timeout)
-    Ok("To be done")
+    Ok(gs.initGameSession(login, level))
   }
 
   def getQuestion (sessionId: String)= Action.async { implicit request: Request[AnyContent] =>
